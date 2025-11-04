@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DS Foods — Pure Taste. Pure Trust.</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet (make sure css/style.css exists) -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Main JS (make sure js/script.js exists) -->
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="container header-row">
+      <div class="brand" aria-label="DS Foods brand">
+        <!-- SVG logo -->
+        <svg class="logo" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="#f8c146"/>
+              <stop offset="1" stop-color="#f6b02f"/>
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="44" fill="url(#g1)"/>
+          <text x="50%" y="55%" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="36" fill="#222">DS</text>
+        </svg>
+        <span class="brand-name">DS Foods</span>
+      </div>
+
+      <nav class="nav" id="nav" aria-label="Primary navigation">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#products">Products</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-primary" id="cta-products">Explore</button>
+        <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="main">
+    <!-- HERO -->
+    <section id="home" class="hero" aria-label="Hero section">
+      <!-- hero image - use images/hero.png -->
+      <img src="images/hero.png" alt="Bottles of oil and sacks of flour on a rustic table" class="hero-img" loading="eager">
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="container hero-content" role="region" aria-label="Intro">
+        <h1 class="hero-title">Pure Taste. <span class="accent">Pure Trust.</span></h1>
+        <p class="hero-sub">Cold-pressed mustard oil, healthy sunflower oil, freshly milled flour and premium besan — made with care for your family.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#products">Our Products</a>
+          <a class="btn btn-ghost" href="#about">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="container about-grid">
+        <div class="about-card">
+          <h2>About DS Foods</h2>
+          <p>We combine traditional techniques and modern hygiene to deliver pure, nutritious food staples. Our focus is on freshness, traceability, and sustainable sourcing.</p>
+
+          <ul class="features" aria-hidden="false">
+            <li>
+              <!-- icon -->
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20c4-4 8-7 12-9 2-1 4-2 4-2s-1 2-3 4c-2 2-6 4-13 7z" fill="currentColor"/></svg>
+              Cold-pressed oils
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4 2.5 7L12 17l-7 3 2.5-7L2 9h7z" fill="currentColor"/></svg>
+              Quality checked
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21h16v-2H4v2zM4 3h10v12H4V3z" fill="currentColor"/></svg>
+              Hygienic packaging
+            </li>
+          </ul>
+        </div>
+
+        <figure class="about-image" aria-hidden="true">
+          <!-- about image -->
+          <img src="images/flour.png" alt="Wheat flour in a bowl" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="section products-section">
+      <div class="container">
+        <h2 class="section-title">Featured Products</h2>
+        <p class="muted center">Small-batch care, big flavor.</p>
+
+        <div class="product-grid" role="list">
+          <!-- Product 1 -->
+          <article class="product" tabindex="0" aria-labelledby="p1" role="listitem">
+            <div class="product-media">
+              <img src="images/mustard.png" alt="Pure Mustard Oil" loading="lazy">
+              <div class="badge">Cold-Pressed</div>
+            </div>
+            <div class="product-body">
+              <h3 id="p1">Pure Mustard Oil</h3>
+              <p class="muted">Traditional aroma, robust flavor — ideal for pickles and frying.</p>
+              <div class="product-meta">
+                <svg class="mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.7 6 6 7 6 11c0 4 6 11 6 11s6-7 6-11c0-4-2.7-5-6-9z" fill="currentColor"/></svg>
+                <span>500ml • 1L • 5L</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="product" tabindex="0" aria-labelledby="p2" role="listitem">
+            <div class="product-media">
+              <img src="images/sunflower.png" alt="Sunflower Oil" loading="lazy">
+              <div class="badge accent-badge">Heart-Healthy</div>
+            </div>
+            <div class="product-body">
+              <h3 id="p2">Sunflower Oil</h3>
+              <p class="muted">Light, neutral, and perfect for everyday cooking.</p>
+              <div class="product-meta">
+                <svg class="mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5z" fill="currentColor"/></svg>
+                <span>1L • 2L • 5L</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="product" tabindex="0" aria-labelledby="p3" role="listitem">
+            <div class="product-media">
+              <img src="images/flour.png" alt="Wheat Flour (Atta)" loading="lazy">
+              <div class="badge">Fresh Milled</div>
+            </div>
+            <div class="product-body">
+              <h3 id="p3">Wheat Flour (Atta)</h3>
+              <p class="muted">Stone/modern milled flour for soft rotis and baking.</p>
+              <div class="product-meta">
+                <svg class="mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4 2.5 7L12 17l-7 3 2.5-7L2 9h7z" fill="currentColor"/></svg>
+                <span>5kg • 10kg</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 4 -->
+          <article class="product" tabindex="0" aria-labelledby="p4" role="listitem">
+            <div class="product-media">
+              <img src="images/besan.png" alt="Besan" loading="lazy">
+              <div class="badge">Premium</div>
+            </div>
+            <div class="product-body">
+              <h3 id="p4">Gram Flour (Besan)</h3>
+              <p class="muted">Fine-textured besan for sweets and snacks.</p>
+              <div class="product-meta">
+                <svg class="mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h18v10H3z" fill="currentColor"/></svg>
+                <span>1kg • 2kg • 5kg</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT TEASER -->
+    <section id="contact" class="section contact-section" aria-label="Contact">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <h2>Contact Us</h2>
+          <p class="muted">For wholesale enquiries, supply partnerships, or product questions — drop us a message.</p>
+          <button class="btn btn-primary" id="open-contact">Send Message</button>
+        </div>
+        <div class="contact-info">
+          <p><strong>Email:</strong> <a href="mailto:info@dsfoods.com">info@dsfoods.com</a></p>
+          <p><strong>Phone:</strong> +91-9876543210</p>
+          <p><strong>Address:</strong> DS Foods Pvt. Ltd., Jaipur, Rajasthan, India</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-row">
+      <div>
+        <strong>DS Foods</strong>
+        <div class="muted small">Pure Taste. Pure Trust.</div>
+      </div>
+      <div class="muted small">© <span id="year"></span> DS Foods. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal-backdrop" id="modal" aria-hidden="true">
+    <div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <h3 id="modal-title">Send us a message</h3>
+
+      <form id="contact-form" class="contact-form" novalidate>
+        <label>
+          <span class="label-text">Name</span>
+          <input type="text" name="name" required maxlength="80" />
+        </label>
+        <label>
+          <span class="label-text">Email</span>
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          <span class="label-text">Message</span>
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Send</button>
+          <button type="button" class="btn btn-ghost" id="modal-cancel">Cancel</button>
+        </div>
+        <div id="form-feedback" aria-live="polite" class="form-feedback"></div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
