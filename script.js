@@ -51,17 +51,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ======== FORM SUBMISSION HANDLING ========
-  // ======== FORM SUBMISSION HANDLING (Formspree Integration) ========
+ // ======== FORM SUBMISSION HANDLING (Formspree Integration) ========
 const form = document.getElementById("contact-form");
 const feedback = document.getElementById("form-feedback");
+const modal = document.getElementById("modal");
 
 form?.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  // Collect data
   const formData = new FormData(form);
-
-  // Optional: simple validation
   const name = formData.get("name")?.trim();
   const email = formData.get("email")?.trim();
   const message = formData.get("message")?.trim();
@@ -72,7 +70,6 @@ form?.addEventListener("submit", async (e) => {
     return;
   }
 
-  // Submit data to Formspree
   try {
     const response = await fetch(form.action, {
       method: "POST",
@@ -85,10 +82,10 @@ form?.addEventListener("submit", async (e) => {
       feedback.style.color = "green";
       form.reset();
 
-      // Optional: Close modal after a few seconds
+      // Optional: Close modal after 2 seconds
       setTimeout(() => modal?.classList.remove("active"), 2000);
     } else {
-      feedback.textContent = "❌ Oops! Something went wrong. Please try again.";
+      feedback.textContent = "❌ Something went wrong. Please try again later.";
       feedback.style.color = "red";
     }
   } catch (error) {
@@ -97,6 +94,7 @@ form?.addEventListener("submit", async (e) => {
     feedback.style.color = "red";
   }
 });
+
 
   // ======== SMOOTH SCROLL (optional if not native) ========
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -118,4 +116,5 @@ form?.addEventListener("submit", async (e) => {
     yearSpan.textContent = new Date().getFullYear();
   }
 });
+
 
