@@ -51,29 +51,52 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ======== FORM SUBMISSION HANDLING ========
-  const form = document.getElementById("contactForm");
-  const feedback = document.getElementById("formFeedback");
+  // ======== FORM SUBMISSION HANDLING (Formspree Integration) ========
+const form = document.getElementById("contact-form");
+const feedback = document.getElementById("form-feedback");
 
-  form?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
+form?.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    if (!name || !email || !message) {
-      feedback.textContent = "⚠️ Please fill out all fields.";
+  // Collect data
+  const formData = new FormData(form);
+
+  // Optional: simple validation
+  const name = formData.get("name")?.trim();
+  const email = formData.get("email")?.trim();
+  const message = formData.get("message")?.trim();
+
+  if (!name || !email || !message) {
+    feedback.textContent = "⚠️ Please fill out all fields.";
+    feedback.style.color = "red";
+    return;
+  }
+
+  // Submit data to Formspree
+  try {
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" },
+    });
+
+    if (response.ok) {
+      feedback.textContent = "✅ Thank you! Your message has been sent successfully.";
+      feedback.style.color = "green";
+      form.reset();
+
+      // Optional: Close modal after a few seconds
+      setTimeout(() => modal?.classList.remove("active"), 2000);
+    } else {
+      feedback.textContent = "❌ Oops! Something went wrong. Please try again.";
       feedback.style.color = "red";
-      return;
     }
-
-    // Simulate success
-    feedback.textContent = "✅ Thank you for contacting us! We’ll get back soon.";
-    feedback.style.color = "green";
-    form.reset();
-
-    // Close modal after 2 seconds
-    setTimeout(() => modal.classList.remove("active"), 2000);
-  });
+  } catch (error) {
+    console.error(error);
+    feedback.textContent = "❌ Network error. Please check your connection.";
+    feedback.style.color = "red";
+  }
+});
 
   // ======== SMOOTH SCROLL (optional if not native) ========
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -95,3 +118,4 @@ document.addEventListener("DOMContentLoaded", () => {
     yearSpan.textContent = new Date().getFullYear();
   }
 });
+
