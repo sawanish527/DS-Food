@@ -20,35 +20,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ======== MODAL CONTACT FORM ========
-  const modal = document.getElementById("contactModal");
-  const openModalBtn = document.getElementById("openModal");
-  const closeModalBtn = document.getElementById("closeModal");
-  const cancelModalBtn = document.getElementById("cancelModal");
+// ======== MODAL CONTACT FORM ========
+const modal = document.getElementById("modal");
+const openModalBtn = document.getElementById("open-contact");
+const closeModalBtn = document.getElementById("modal-close");
+const cancelModalBtn = document.getElementById("modal-cancel");
 
-  // Open modal
-  if (openModalBtn) {
-    openModalBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      modal.classList.add("active");
+// Open modal
+if (openModalBtn) {
+  openModalBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    modal.classList.add("active");
+  });
+}
+
+// Close modal
+[closeModalBtn, cancelModalBtn].forEach((btn) => {
+  if (btn) {
+    btn.addEventListener("click", () => {
+      modal.classList.remove("active");
     });
   }
+});
 
-  // Close modal
-  [closeModalBtn, cancelModalBtn].forEach(btn => {
-    if (btn) {
-      btn.addEventListener("click", () => {
-        modal.classList.remove("active");
-      });
-    }
-  });
-
-  // Click outside closes modal
-  modal?.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.remove("active");
-    }
-  });
+// Click outside closes modal
+modal?.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.remove("active");
+  }
+});
 
   // ======== FORM SUBMISSION HANDLING ========
  // ======== FORM SUBMISSION HANDLING (Formspree Integration) ========
@@ -116,5 +116,6 @@ form?.addEventListener("submit", async (e) => {
     yearSpan.textContent = new Date().getFullYear();
   }
 });
+
 
 
